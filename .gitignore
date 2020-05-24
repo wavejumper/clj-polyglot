@@ -1,0 +1,11 @@
+node_modules/
+target/
+.cpcache/
+.idea/
+*.iml
+.shadow-cljs/
+*.xml.asc
+.nrepl-port
+pom.xml
+.lein-failures
+.DS_Store
