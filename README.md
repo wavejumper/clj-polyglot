@@ -33,11 +33,11 @@ We can interface with this library like so:
 (def ctx
   (poly.js/js-ctx tonal-src))
 
-(def Tonal
+(def tonal
   (poly.js/require ctx "Tonal"))
 
 (def api
-  (poly.js/import Tonal :Note [:midi :freq]))
+  (poly.js/import tonal :Note [:midi :freq]))
 
 (defn freq [note]
   (poly/eval api :freq note))
