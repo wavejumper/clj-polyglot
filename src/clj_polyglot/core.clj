@@ -1,4 +1,4 @@
-(ns clj-polygot.core
+(ns clj-polyglot.core
   (:refer-clojure :exclude [eval])
   (:import (org.graalvm.polyglot Value)
            (org.graalvm.polyglot.proxy ProxyArray ProxyObject)))

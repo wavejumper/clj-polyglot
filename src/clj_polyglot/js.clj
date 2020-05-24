@@ -1,4 +1,4 @@
-(ns clj-polygot.js
+(ns clj-polyglot.js
   (:refer-clojure :exclude [import require])
   (:import (org.graalvm.polyglot Context Source Value)))
 
