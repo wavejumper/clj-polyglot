@@ -12,6 +12,9 @@
   :compile-path
   "target"
 
+  :test-paths
+  ["test"]
+
   :jvm-opts
   ["-XX:+UnlockExperimentalVMOptions" "-XX:+EnableJVMCI"]
 
