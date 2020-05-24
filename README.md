@@ -1,5 +1,5 @@
-[![Clojars Project](https://img.shields.io/clojars/v/wavejumper/tonal.svg)](https://clojars.org/wavejumper/tonal)
-[![CircleCI](https://circleci.com/gh/wavejumper/tonal-clj.svg?style=svg)](https://circleci.com/gh/wavejumper/tonal-clj)
+[![Clojars Project](https://img.shields.io/clojars/v/wavejumper/clj-polyglot.svg)](https://clojars.org/wavejumper/clj-polyglot)
+[![CircleCI](https://circleci.com/gh/wavejumper/clj-polyglot.svg?style=svg)](https://circleci.com/gh/wavejumper/clj-polyglot)
 
 # clj-polygot
 
