@@ -1,5 +1,5 @@
 (ns clj-polyglot.js
-  (:refer-clojure :exclude [import require])
+  (:refer-clojure :exclude [import])
   (:import (org.graalvm.polyglot Context Source Value)))
 
 (defn js-ctx
@@ -12,7 +12,7 @@
     (.eval ctx src)
     ctx))
 
-(defn ^Value require
+(defn ^Value from
   [^Context ctx ^String module-name]
   (let [bindings (.getBindings ctx "js")]
     (.getMember bindings module-name)))

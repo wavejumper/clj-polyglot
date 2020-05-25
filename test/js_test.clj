@@ -6,7 +6,7 @@
 (deftest readme-example
   (let [tonal-src (slurp "https://cdn.jsdelivr.net/npm/@tonaljs/tonal/browser/tonal.min.js")
         ctx       (poly.js/js-ctx tonal-src)
-        tonal     (poly.js/require ctx "Tonal")
+        tonal     (poly.js/from ctx "Tonal")
         api       (poly.js/import tonal :Note [:midi :freq :names])
         freq      #(poly/eval api :freq %)
         names     #(poly/eval api :names %)]
