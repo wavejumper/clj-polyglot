@@ -47,11 +47,19 @@
 
 (defn serialize-arg [arg]
   (cond
+    (keyword? arg)
+    (name arg)
+
+    (symbol? arg)
+    (name arg)
+
     (map? arg)
-    (ProxyObject/fromMap arg)
+    (ProxyObject/fromMap (into {} (map (fn [[k v]]
+                                         [(serialize-arg k) (serialize-arg v)])
+                                       arg)))
 
     (coll? arg)
-    (ProxyArray/fromArray (into-array Object arg))
+    (ProxyArray/fromArray (into-array Object (map serialize-arg arg)))
 
     :else
     arg))
