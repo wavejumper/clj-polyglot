@@ -1,3 +1,6 @@
+[![Clojars Project](https://img.shields.io/clojars/v/wavejumper/clj-polyglot.svg)](https://clojars.org/wavejumper/clj-polyglot)
+[![CircleCI](https://circleci.com/gh/wavejumper/clj-polyglot.svg?style=svg)](https://circleci.com/gh/wavejumper/clj-polyglot)
+
 # clj-polygot
 
 Clojure interop into graalvm's polyglot functionality. Requires JDK11+ or a graalvm runtime.
@@ -30,11 +33,11 @@ We can interface with this library like so:
 (def ctx
   (poly.js/js-ctx tonal-src))
 
-(def Tonal
+(def tonal
   (poly.js/require ctx "Tonal"))
 
 (def api
-  (poly.js/import Tonal :Note [:midi :freq]))
+  (poly.js/import tonal :Note [:midi :freq]))
 
 (defn freq [note]
   (poly/eval api :freq note))
