@@ -51,7 +51,7 @@ We can interface with this library like so:
 
 Consider a JavaScript API like [asciichart](https://github.com/kroitor/asciichart)
 
-```asciichart
+```javascript
 var asciichart = require ('asciichart');
 asciichart.plot([1,2,3]);
 ```
