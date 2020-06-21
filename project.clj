@@ -1,4 +1,4 @@
-(defproject wavejumper/clj-polyglot "1.0.2"
+(defproject wavejumper/clj-polyglot "1.0.3"
   :description "Clojure API into graal polygamy"
   :url "https://github.com/wavejumper/tonal-clj"
 

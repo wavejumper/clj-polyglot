@@ -18,10 +18,15 @@
     (.getMember bindings module-name)))
 
 (defn import
-  [^Value tonal api-name members]
-  (let [member (.getMember tonal (name api-name))]
-    (into {}
-          (map (fn [f]
-                 [f (.getMember member (name f))]))
-          members)))
+  ([^Value member members]
+   (into {}
+         (map (fn [f]
+                [f (.getMember member (name f))]))
+         members))
+  ([^Value value api-name members]
+   (let [member (.getMember value (name api-name))]
+     (into {}
+           (map (fn [f]
+                  [f (.getMember member (name f))]))
+           members))))
 

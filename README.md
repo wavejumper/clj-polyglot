@@ -12,7 +12,9 @@ This library was used to build [tonal-clj](https://github.com/wavejumper/tonal-c
 
 **TODO**: extend this library to support other graalvm languages 
 
-# Usage
+# Examples
+
+## tonal
 
 Consider a JavaScript API like [tonal](https://github.com/tonaljs/tonal#example): 
 
@@ -44,3 +46,31 @@ We can interface with this library like so:
 
 (freq "A4") ;; => 440
 ``` 
+
+## asciichart 
+
+Consider a JavaScript API like [asciichart](https://github.com/kroitor/asciichart)
+
+```asciichart
+var asciichart = require ('asciichart');
+asciichart.plot([1,2,3]);
+```
+
+```clojure
+(def asciichart-src 
+  (slurp "https://cdn.jsdelivr.net/npm/asciichart@1.5.21/asciichart.js"))
+
+(def ctx 
+  (poly.js/js-ctx asciichart-src))
+
+(def asciichart
+  (poly.js/from ctx "asciichart"))
+
+(def api 
+  (poly.js/import asciichart [:plot]))
+
+(def plot [values]
+  (poly/eval api :plot values))
+
+(plot [1 2 3])
+```
