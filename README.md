@@ -3,7 +3,7 @@
 
 # clj-polygot
 
-Clojure interop into graalvm's polyglot functionality. Requires JDK11+ or a graalvm runtime.
+Clojure library for graalvm's polyglot functionality. Requires JDK11+ or a graalvm runtime.
 
 * `clj-polyglot.core` - eval fn + seralization/deserialization fns
 * `clj-polyglot.js` - JavaScript context
