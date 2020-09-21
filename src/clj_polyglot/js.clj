@@ -7,15 +7,24 @@
       (.allowExperimentalOptions true)
       (.option "js.experimental-foreign-object-prototype" "true")))
 
-(defn js-ctx
-  ([src-file]
-   (js-ctx (default-builder) src-file))
+(defn load-src [^Context ctx ^String src-str]
+  (let [src (.build (Source/newBuilder "js" src-str "src.js"))]
+    (.eval ctx src)
+    ctx))
 
-  ([^Context$Builder builder ^String src-file]
-   (let [ctx (.build builder)
-         src (.build (Source/newBuilder "js" src-file "src.js"))]
-     (.eval ctx src)
-     ctx)))
+(defn load-file [ctx file]
+  (load-src ctx (slurp file)))
+
+(defn ^Context js-ctx
+  ([]
+   (.build (default-builder)))
+
+  ([src]
+   (js-ctx (default-builder) src))
+
+  ([^Context$Builder builder src-str]
+   (let [ctx (.build builder)]
+     (load-src ctx src-str))))
 
 (defn ^Value from
   [^Context ctx ^String module-name]
