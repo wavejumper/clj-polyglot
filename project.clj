@@ -1,4 +1,4 @@
-(defproject wavejumper/clj-polyglot "1.0.5"
+(defproject wavejumper/clj-polyglot "1.0.6"
   :description "Clojure library for graal's polyglot functionality"
   :url "https://github.com/wavejumper/clj-polyglot"
 

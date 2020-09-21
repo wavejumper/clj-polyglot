@@ -1,5 +1,5 @@
 (ns clj-polyglot.js
-  (:refer-clojure :exclude [import])
+  (:refer-clojure :exclude [import load-file])
   (:import (org.graalvm.polyglot Context Context$Builder Source Value)))
 
 (defn ^Context$Builder default-builder []
@@ -7,13 +7,13 @@
       (.allowExperimentalOptions true)
       (.option "js.experimental-foreign-object-prototype" "true")))
 
-(defn load-src [^Context ctx ^String src-str]
+(defn load-string [^Context ctx ^String src-str]
   (let [src (.build (Source/newBuilder "js" src-str "src.js"))]
     (.eval ctx src)
     ctx))
 
 (defn load-file [ctx file]
-  (load-src ctx (slurp file)))
+  (load-string ctx (slurp file)))
 
 (defn ^Context js-ctx
   ([]
@@ -24,7 +24,7 @@
 
   ([^Context$Builder builder src-str]
    (let [ctx (.build builder)]
-     (load-src ctx src-str))))
+     (load-string ctx src-str))))
 
 (defn ^Value from
   [^Context ctx ^String module-name]
